@@ -37,4 +37,8 @@ const storage = multer.diskStorage({
         }
     })
  })
+ app.get("/",async(req,resp)=>{
+  const data=await ImageModel.find()
+  resp.send(data)
+ })
  app.listen(4000)
